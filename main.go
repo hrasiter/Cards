@@ -3,13 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	/*Declaring long way varible*/
-	//var card string = "Ace of Space"
+	cards := []string{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades")
 
-	/*Declaring short hand variable*/
-	card := newCard()
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 
-	fmt.Println(card)
+	for i := 0; i < len(cards); i++ {
+		fmt.Println(i, cards[i])
+	}
+
+	fmt.Println(cards)
 }
 
 func newCard() string {
